@@ -1,0 +1,112 @@
+.gameboard, .card {
+  border: 1px solid black;
+}
+
+.stock, .foundations, .tableau {
+  border: 1px solid grey;
+  margin: 5px;
+}
+
+.gameboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 5px;
+  height: 100%;
+  width: 100%;
+}
+
+.stock, .foundations, .tableau {
+  background-color:#f5f5f5;
+  display: grid;
+}
+
+.stock {
+  grid-template-columns: 1fr 1fr;
+}
+
+.foundations {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.tableau {
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.card {
+  width: 50px;
+  height: 80px;
+  border-radius: 15px;
+  margin: 5px auto;
+  margin-top: -160px;
+  padding: 0;
+  background-color:white;
+}
+
+.facedown {
+  background-color:aliceblue;
+}
+
+.selected {
+  background-color:blanchedalmond;
+}
+
+.empty {
+  background-color: #f0f0f0;
+}
+
+.card:first-child {
+  margin-top: 0px;
+}
+
+.deck {
+  margin: 5px;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+.hearts, .diamonds {
+  color: tomato;
+}
+
+@media (min-width: 480px) {
+  .gameboard {
+    max-width: 850px;
+    grid-template-columns: 1fr 1fr;
+    margin:auto;
+  }
+  
+  .tableau {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+@media (min-width: 850px) {
+  .gameboard {
+    max-width: 1080px;
+  }
+
+  /* .deck, .card {
+    width: 125px;
+    height: calc(125px * 1.6);
+  } */
+
+  .card {
+    width: 125px;
+    height: calc(125px * 1.6);
+  }
+}
+
+/* TODO:
+ - swap Stock and Foundations in narrowest view
+ - 7 columns in both rows in widest view 
+ */
